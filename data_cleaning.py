@@ -2,6 +2,7 @@ import pandas as pd
 
 
 def Concierge():
+    #Fonction permettant de nettoyer le CSV pour avoir les valeurs plus efficacement
     empty_data = []
     df = pd.read_csv("data_brutes.csv")
     for headers in df.colums[:]:
@@ -25,4 +26,3 @@ def Concierge():
             empty_data.insert(0, array_date)
     vals = {n:empty_data[k] for n, k in enumerate(df.columns)}
     df.to_csv("data.csv", index=False)
-    
